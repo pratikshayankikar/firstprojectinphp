@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#login-container {
+    width: 500px;
+  
+}
+#register-container{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#main {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
