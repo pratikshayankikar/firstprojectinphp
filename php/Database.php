@@ -1,29 +1,34 @@
 <?php
 class Database
 {
-    public $hostname = "localhost";
+    public $hostname = "localhost:3306";
     public $username = "root";
     public $password = "";
     public $db = "ecom";
     private $mysqli = "";
+    private $tableName="demo";
  
 
-    public $message = array(); //
+     public $message = array(); //
 
     private $result = array();
 
     function __construct()
     {
         $this->connect = new mysqli($this->hostname, $this->username, $this->password, $this->db);
-        if (!$this->connect) {
-            die("Could not connect to database: " . $this->db);
+        if ($this->connect) {
+            die("connect to database: " . $this->db);
         }
     }
 
     public function insert()
     {
-        // $sql = "INSERT INTO $tableName (c1 , c2 , c3 , c4 , c5 , c6) VALUE (V1 , V2 , V3)";
-        // $sql = "INSERT INTO $tableName ()"
+         $sql = "INSERT INTO $tableName (id , username , 'password') VALUE (1 , 'pratiksha' , '123')";
+        //   $sql = "INSERT INTO $tableName ()"
+        if($this->$connect){
+            echo("record is successfully");
+        }
+       
     }
 
 
@@ -44,11 +49,11 @@ class Database
 
 $db = new Database();
 
-// $result = $db->login("amit@gmail.com", "1234", 'users');
-// print_r($result);
+$result = $db->login("amit@gmail.com", "1234", 'users');
+print_r($result);
 
-// $db->select('purchase');
-// Database $obj = new Database();
+   $db->select('purchase');
+//    Database $obj = new Database();
 
 
 
